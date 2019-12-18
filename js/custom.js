@@ -9,6 +9,10 @@
   });
   wow.init();
 
+  $(".btn1").click(function(){
+    $("p").hide();
+  });
+
   //jQuery to collapse the navbar on scroll
   $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
