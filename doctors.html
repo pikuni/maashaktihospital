@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Specialists – Maa Shakti Hospital</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="doctors.css" rel="stylesheet">
+<!-- ✅ SEO: Favicon (add your actual favicon) -->
+<link rel="icon" href="logo.jpeg" sizes="48x48" type="image/x-icon">
+<link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="logo.jpeg">
+        
+</head>
+<body>
+
+<!-- FLOAT EMERGENCY -->
+<a href="tel:+9199370 82824" class="float-emergency">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V17a2 2 0 01-2 2h-1C9.716 19 3 12.284 3 4V3z"/></svg>
+  Emergency 24/7
+</a>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="tel:+919937082824">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V17a2 2 0 01-2 2h-1C9.716 19 3 12.284 3 4V3z"/></svg>
+      Emergency: +91 99370 82824
+    </a>
+    <a href="mailto:maashaktihospital@yahoo.co.in">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      maashaktihospital@yahoo.co.in
+    </a>
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html#contact" class="top-bar-cta">Book Appointment</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo6.png" onerror="this.style.display='none'" alt="Maa Shakti">
+      <img src="img/logo5.png" onerror="this.style.display='none'" alt="Hospital">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#excellence">Care Excellence</a></li>
+      <li><a href="index.html#expertise">Expertise</a></li>
+      <li><a href="doctors.html" class="active">Specialists</a></li>
+      <li><a href="index.html#facilities">Facilities</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Patient Portal</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#excellence">Care Excellence</a>
+  <a href="index.html#expertise">Medical Expertise</a>
+  <a href="doctors.html">Specialists</a>
+  <a href="index.html#facilities">Facilities</a>
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-eyebrow">Medical Team</div>
+    <h1>Meet Our <em>Expert</em><br>Specialists</h1>
+    <p>A dedicated team of experienced specialists committed to delivering world-class care with compassion and precision.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num" id="totalCount">90</div>
+        <div class="hero-stat-label">Specialists</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Departments</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">On-Call Doctors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <div class="filter-top">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search by doctor name…">
+      </div>
+      <div class="filter-meta">Showing <span id="visibleCount">90</span> of <span id="allCount">90</span> specialists</div>
+    </div>
+    <div class="dept-tabs" id="deptTabs">
+      <!-- Tabs injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+  <div class="results-header">
+    <h2 class="results-title" id="sectionTitle">All Specialists</h2>
+    <div class="view-toggle">
+      <button class="view-btn active" id="gridBtn" title="Grid view" onclick="setView('grid')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </button>
+      <button class="view-btn" id="listBtn" title="List view" onclick="setView('list')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="doctors-grid" id="doctorsGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <span class="footer-logo">
+              <a href="index.html" class="nav-logo">
+                <img src="img/logo6.png" height="60">
+                <img src="img/logo5.png" height="60">
+              </a>
+            </span>
+            <p class="footer-info-row">
+            A 30-bed hospital located at the heart of Bhubaneswar City - A modern facility with excellent medical/surgical units, an outstanding emergent care center, and extensive inpatient and outpatient services. We are known for our passion for detail and desire to make every patient's visit an unusually pleasing one. Browse our site to learn more!
+            </p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><p>
+          Maa Shakti Hospital<br>
+          Plot No - 168, Ekamra Marg, Unit-6,<br>
+          (Near Capital Hospital),<br>
+          Bhubaneswar - 751001</p>
+        </div>
+        <div class="footer-info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V17a2 2 0 01-2 2h-1C9.716 19 3 12.284 3 4V3z"/></svg><p>+91 99370 82824</p></div>
+        <div class="footer-info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V17a2 2 0 01-2 2h-1C9.716 19 3 12.284 3 4V3z"/></svg><p>+91 99372 76290</p></div>
+        <div class="footer-info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V17a2 2 0 01-2 2h-1C9.716 19 3 12.284 3 4V3z"/></svg><p>+91 94384 10702</p></div>
+        <div class="footer-info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><p>maashaktihospital@yahoo.co.in</p></div>
+        <div>
+          <iframe width="275" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?hl=en&amp;ie=UTF8&amp;q=maa+shakti+hospital+bhubaneswar&amp;fb=1&amp;gl=in&amp;hq=maa+shakti+hospital&amp;hnear=0x3a1909d2d5170aa5:0xfc580e2b68b33fa8,Bhubaneswar,+Orissa&amp;view=map&amp;cid=17982826311181124909&amp;ll=20.25854,85.820456&amp;spn=0.006295,0.006295&amp;t=m&amp;vpsrc=0&amp;iwloc=A&amp;output=embed"></iframe>
+          <br />
+          <small>
+            <a href="http://maps.google.co.in/maps?hl=en&amp;ie=UTF8&amp;q=maa+shakti+hospital+bhubaneswar&amp;fb=1&amp;gl=in&amp;hq=maa+shakti+hospital&amp;hnear=0x3a1909d2d5170aa5:0xfc580e2b68b33fa8,Bhubaneswar,+Orissa&amp;view=map&amp;cid=17982826311181124909&amp;ll=20.25854,85.820456&amp;spn=0.006295,0.006295&amp;t=m&amp;vpsrc=0&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a>
+          </small>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="footer-social">
+          <a class="footer-social-btn" href="#"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="footer-social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a class="footer-social-btn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <div class=""><img src="img/building.jpeg" height="350" alt="Maa Shakti Hospital Building" onerror="this.style.background='#1e3a4a'"></div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 Maa Shakti Hospital. All rights reserved. Dedicated to your health and well-being.</div>
+  </div>
+</footer>
+
+<script>
+const DOCTORS = [
+  // O&G
+  { name: "Dr. Sisir Kumar Mahapatra",    dept: "O&G",                     time: "Everyday 08:30 AM – 10:00 AM" },
+  { name: "Dr. Sweta Panigrahi",          dept: "O&G",                     time: "Mon–Sun 09:00 AM – 01:00 PM" },
+  { name: "Dr. Satyanarayan Samal",       dept: "O&G",                     time: "Mon–Sat 07:00 PM – 08:00 PM" },
+  { name: "Dr. Bhabani Sankar Nayak",     dept: "O&G",                     time: "Mon–Sat 05:00 PM – 07:00 PM" },
+  { name: "Dr. Samikshya Nanda",          dept: "O&G",                     time: "Mon–Sat 08:00 AM – 09:30 AM" },
+  { name: "Dr. Bharat Chandra Bhuyan",    dept: "O&G",                     time: null },
+  { name: "Dr. P.K. Acharya",             dept: "O&G",                     time: null },
+  { name: "Dr. Arati Sattapathy",         dept: "O&G",                     time: null },
+  { name: "Dr. Mamata Barik",             dept: "O&G",                     time: null },
+  { name: "Dr. Chandrabhanu Dallal",      dept: "O&G",                     time: null },
+  { name: "Dr. Swyamsidha Mohanty",       dept: "O&G",                     time: null },
+  { name: "Dr. Sujata Swain",             dept: "O&G",                     time: null },
+  { name: "Dr. Tanushree Rath",           dept: "O&G",                     time: null },
+  { name: "Dr. Sushree Samikhya Naik",    dept: "O&G",                     time: null },
+  { name: "Dr. Sibani Rout",              dept: "O&G",                     time: null },
+  { name: "Dr. Smruti Shree Sahu",        dept: "O&G",                     time: null },
+  { name: "Dr. Sanjukata Mahapatra",      dept: "O&G",                     time: null },
+  { name: "Dr. Anamika Mishra",           dept: "O&G",                     time: null },
+  { name: "Dr. Priyasa Nanda",            dept: "O&G",                     time: null },
+  { name: "Dr. Swarnima Das",             dept: "O&G",                     time: null },
+  { name: "Dr. Prakash Chandra Mishra",   dept: "O&G",                     time: null },
+  { name: "Dr. Basudev Mahapatra",        dept: "O&G",                     time: null },
+  { name: "Dr. Monalisha Rajguru",        dept: "O&G",                     time: null },
+  { name: "Dr. Adyasha Mohapatra",        dept: "O&G",                     time: null },
+  { name: "Dr. Monalisha Naik",           dept: "O&G",                     time: null },
+  { name: "Dr. Mrinal Kanta Dash",        dept: "O&G",                     time: null },
+  { name: "Dr. Monalisha Behera",         dept: "O&G",                     time: null },
+  { name: "Dr. Rabi Ranjan Mishra",       dept: "O&G",                     time: null },
+  { name: "Dr. Namita Jena",              dept: "O&G",                     time: null },
+  { name: "Dr. Rasmi Kanta Patra",        dept: "O&G",                     time: null },
+  { name: "Dr. Sasmita Behuria",          dept: "O&G",                     time: null },
+  { name: "Dr. Kumkum Saini",             dept: "O&G",                     time: null },
+  { name: "Dr. Sanghmitra Das",           dept: "O&G",                     time: null },
+  { name: "Dr. Nihar Ranjan Bhoi",        dept: "O&G",                     time: null },
+  { name: "Dr. Nisha Kaushik",            dept: "O&G",                     time: null },
+  { name: "Dr. Laxmi Narayan Sahoo",      dept: "O&G",                     time: null },
+  { name: "Dr. Kabita Chhaina",           dept: "O&G",                     time: null },
+  { name: "Dr. Nihar Ranjan Mishra",      dept: "O&G",                     time: null },
+  { name: "Dr. Bandita Priyadarshini",    dept: "O&G",                     time: null },
+  { name: "Dr. Dibyajyoti Nayak",         dept: "O&G",                     time: null },
+  { name: "Dr. Anadi Charan Mishra",      dept: "O&G",                     time: null },
+  { name: "Dr. Sibani Devi",              dept: "O&G",                     time: null },
+  { name: "Dr. Anubhuti Patel",           dept: "O&G",                     time: null },
+  { name: "Dr. Snigdhamayee Panda",       dept: "O&G",                     time: null },
+  { name: "Dr. Bhagyashree Jena",         dept: "O&G",                     time: null },
+  { name: "Dr. Jayashree Rout",           dept: "O&G",                     time: null },
+  // Paediatric
+  { name: "Dr. Dillip Kumar Dash",        dept: "Paediatric",              time: "Everyday 7:30–8:30 AM & 4:00–5:00 PM" },
+  { name: "Dr. Jitendra Panda",           dept: "Paediatric",              time: "Daily 9–10 AM & 5–7 PM (Sun eve closed)" },
+  { name: "Dr. Bichitra Nanda Rout",      dept: "Paediatric",              time: null },
+  { name: "Dr. Chita Ranjan Kar",         dept: "Paediatric",              time: null },
+  { name: "Dr. Desis Kumar Panda",        dept: "Paediatric",              time: null },
+  { name: "Dr. Gayatri Ray",              dept: "Paediatric",              time: null },
+  { name: "Dr. Priyabarta Panda",         dept: "Paediatric",              time: null },
+  { name: "Dr. Asis Dixit",               dept: "Paediatric",              time: null },
+  // Orthopaedic
+  { name: "Dr. Paresh Kumar Pattnaik",    dept: "Orthopaedic",             time: null },
+  { name: "Dr. Baban Kumar Ojha",         dept: "Orthopaedic",             time: null },
+  { name: "Dr. G. Krishna Prasad",        dept: "Orthopaedic",             time: null },
+  { name: "Dr. Budheswar Majhi",          dept: "Orthopaedic",             time: null },
+  { name: "Dr. Biswakesh Panigrahi",      dept: "Orthopaedic",             time: null },
+  // Surgery
+  { name: "Dr. Dharni Dhar Pandav",       dept: "Surgery",                 time: "Everyday 09:00 AM–01:00 PM & 07:00–09:00 PM" },
+  { name: "Dr. Jitendra Narayan Senapati",dept: "Surgery",                 time: null },
+  { name: "Dr. Sumit Subhadarshi Mohanty",dept: "Surgery",                 time: null },
+  { name: "Dr. Kasturi Bharadwaj",        dept: "Surgery",                 time: null },
+  { name: "Dr. Alok Mohanty",             dept: "Surgery",                 time: null },
+  { name: "Dr. Narayan Rout",             dept: "Surgery",                 time: null },
+  { name: "Dr. Pramod Samantray",         dept: "Surgery",                 time: null },
+  { name: "Dr. Bijaya Kumar Sahoo",       dept: "Surgery",                 time: null },
+  { name: "Dr. Saroj Kant Sahoo",         dept: "Surgery",                 time: null },
+  { name: "Dr. Sunil Kumar Swain",        dept: "Surgery",                 time: null },
+  { name: "Dr. Ramapada Mohapatra",       dept: "Surgery",                 time: null },
+  { name: "Dr. Narahari Moharana",        dept: "Surgery",                 time: null },
+  { name: "Dr. Sobhan Mishra",            dept: "Dental Surgery",          time: null },
+  // Paediatric Surgery
+  { name: "Dr. Antaryami Pradhan",        dept: "Paediatric Surgery",      time: null },
+  { name: "Dr. Anil Kumar Panda",         dept: "Paediatric Surgery",      time: null },
+  // Urology
+  { name: "Dr. Debabrata Sabat",          dept: "Urology",                 time: null },
+  { name: "Dr. Pratyush Ranjan Samantaray",dept: "Urology",                time: null },
+  { name: "Dr. Pratik Sahoo",             dept: "Urology",                 time: null },
+  { name: "Dr. Debashis Routray",         dept: "Urology",                 time: null },
+  // ENT
+  { name: "Dr. Kaushik Sadangi",          dept: "ENT",                     time: null },
+  { name: "Dr. Debashees Nanda",          dept: "ENT",                     time: null },
+  // Medicine / Cardiology
+  { name: "Dr. Purna Chandra Bahinipati", dept: "Medicine & Cardiology",   time: "Everyday 10:30 AM – 11:30 AM" },
+  { name: "Dr. Manoj Kishore Chhotray",   dept: "Medicine & Cardiology",   time: null },
+  { name: "Dr. Mahesh Rath",              dept: "Medicine & Cardiology",   time: null },
+  // Dermatology
+  { name: "Sova Das",                     dept: "Dermatology",             time: null },
+  // Neurology
+  { name: "Dr. Om Mishra",                dept: "Neurology",               time: null },
+];
+
+// Department display labels
+const DEPT_MAP = {
+  "All":                   "All",
+  "O&G":                   "Obstetrics & Gynaecology",
+  "Paediatric":            "Paediatric",
+  "Orthopaedic":           "Orthopaedic",
+  "Surgery":               "Surgery",
+  "Dental Surgery":        "Dental Surgery",
+  "Paediatric Surgery":    "Paediatric Surgery",
+  "Urology":               "Urology",
+  "ENT":                   "ENT",
+  "Medicine & Cardiology": "Medicine & Cardiology",
+  "Dermatology":           "Dermatology",
+  "Neurology":             "Neurology",
+};
+
+let currentDept = "All";
+let currentSearch = "";
+let currentView = "grid";
+
+function getInitials(name) {
+  return name.replace(/^Dr\.\s*/i, '').split(' ').slice(0,2).map(w => w[0]).join('').toUpperCase();
+}
+
+function renderTabs() {
+  const tabs = document.getElementById('deptTabs');
+  const depts = ["All", ...Object.keys(DEPT_MAP).filter(d => d !== "All")];
+  tabs.innerHTML = '';
+  depts.forEach(dept => {
+    const count = dept === "All" ? DOCTORS.length : DOCTORS.filter(d => d.dept === dept).length;
+    if (count === 0) return;
+    const btn = document.createElement('button');
+    btn.className = 'dept-tab' + (dept === currentDept ? ' active' : '');
+    btn.dataset.dept = dept;
+    const shortLabel = dept === "O&G" ? "Obstetrics & Gynae" : dept === "Medicine & Cardiology" ? "Medicine" : dept;
+    btn.innerHTML = `${shortLabel} <span class="count">${count}</span>`;
+    btn.onclick = () => { currentDept = dept; renderTabs(); renderCards(); };
+    tabs.appendChild(btn);
+  });
+}
+
+function renderCards() {
+  const grid = document.getElementById('doctorsGrid');
+  const search = currentSearch.toLowerCase();
+  const filtered = DOCTORS.filter(d => {
+    const deptMatch = currentDept === "All" || d.dept === currentDept;
+    const searchMatch = !search || d.name.toLowerCase().includes(search) || d.dept.toLowerCase().includes(search);
+    return deptMatch && searchMatch;
+  });
+
+  const visible = document.getElementById('visibleCount');
+  const titleEl = document.getElementById('sectionTitle');
+  visible.textContent = filtered.length;
+  titleEl.textContent = currentDept === "All" ? "All Specialists" : DEPT_MAP[currentDept] || currentDept;
+
+  grid.className = 'doctors-grid' + (currentView === 'list' ? ' list-view' : '');
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <h3>No doctors found</h3>
+      <p>Try a different search term or department filter.</p>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((doc, i) => {
+    const initials = getInitials(doc.name);
+    const isOnCall = !doc.time;
+    const deptFull = DEPT_MAP[doc.dept] || doc.dept;
+    const statusBadge = isOnCall
+      ? `<span class="oncall-badge">On Call</span>`
+      : `<span class="timed-badge">Scheduled</span>`;
+    const timeHtml = doc.time
+      ? `<div class="card-time">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ${doc.time}
+        </div>`
+      : `<div class="card-time">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Available On Call
+        </div>`;
+
+    return `<div class="doctor-card" style="animation-delay:${i * 0.03}s">
+      <div class="card-avatar">
+        <div class="avatar-initials">${initials}</div>
+        <span class="dept-badge">${doc.dept}</span>
+        ${statusBadge}
+      </div>
+      <div class="card-body">
+        <div class="card-name">${doc.name}</div>
+        <div class="card-dept">${deptFull}</div>
+        ${timeHtml}
+      </div>
+      <div class="card-footer">
+        <button class="appointment-btn" onclick="window.location='index.html#contact'">Book Appointment</button>
+        ${isOnCall ? `<svg viewBox="0 0 24 24" fill="none" stroke="#f5a200" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>` : `<svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>`}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('gridBtn').classList.toggle('active', v === 'grid');
+  document.getElementById('listBtn').classList.toggle('active', v === 'list');
+  renderCards();
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderCards();
+});
+
+document.getElementById('allCount').textContent = DOCTORS.length;
+document.getElementById('totalCount').textContent = DOCTORS.length;
+
+renderTabs();
+renderCards();
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}));
+</script>
+</body>
+</html>
