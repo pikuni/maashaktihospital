@@ -10,7 +10,10 @@
 <link rel="icon" href="logo.jpeg" sizes="48x48" type="image/x-icon">
 <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="180x180" href="logo.jpeg">
-        
+
+<!-- Supabase JS client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 <body>
 
@@ -75,7 +78,7 @@
     <p>A dedicated team of experienced specialists committed to delivering world-class care with compassion and precision.</p>
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num" id="totalCount">90</div>
+        <div class="hero-stat-num" id="totalCount">0</div>
         <div class="hero-stat-label">Specialists</div>
       </div>
       <div>
@@ -98,7 +101,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" class="search-input" id="searchInput" placeholder="Search by doctor name…">
       </div>
-      <div class="filter-meta">Showing <span id="visibleCount">90</span> of <span id="allCount">90</span> specialists</div>
+      <div class="filter-meta">Showing <span id="visibleCount">0</span> of <span id="allCount">0</span> specialists</div>
     </div>
     <div class="dept-tabs" id="deptTabs">
       <!-- Tabs injected by JS -->
@@ -175,103 +178,18 @@
 </footer>
 
 <script>
-const DOCTORS = [
-  // O&G
-  { name: "Dr. Sisir Kumar Mahapatra",    dept: "O&G",                     time: "Everyday 08:30 AM – 10:00 AM" },
-  { name: "Dr. Sweta Panigrahi",          dept: "O&G",                     time: "Mon–Sun 09:00 AM – 01:00 PM" },
-  { name: "Dr. Satyanarayan Samal",       dept: "O&G",                     time: "Mon–Sat 07:00 PM – 08:00 PM" },
-  { name: "Dr. Bhabani Sankar Nayak",     dept: "O&G",                     time: "Mon–Sat 05:00 PM – 07:00 PM" },
-  { name: "Dr. Samikshya Nanda",          dept: "O&G",                     time: "Mon–Sat 08:00 AM – 09:30 AM" },
-  { name: "Dr. Bharat Chandra Bhuyan",    dept: "O&G",                     time: null },
-  { name: "Dr. P.K. Acharya",             dept: "O&G",                     time: null },
-  { name: "Dr. Arati Sattapathy",         dept: "O&G",                     time: null },
-  { name: "Dr. Mamata Barik",             dept: "O&G",                     time: null },
-  { name: "Dr. Chandrabhanu Dallal",      dept: "O&G",                     time: null },
-  { name: "Dr. Swyamsidha Mohanty",       dept: "O&G",                     time: null },
-  { name: "Dr. Sujata Swain",             dept: "O&G",                     time: null },
-  { name: "Dr. Tanushree Rath",           dept: "O&G",                     time: null },
-  { name: "Dr. Sushree Samikhya Naik",    dept: "O&G",                     time: null },
-  { name: "Dr. Sibani Rout",              dept: "O&G",                     time: null },
-  { name: "Dr. Smruti Shree Sahu",        dept: "O&G",                     time: null },
-  { name: "Dr. Sanjukata Mahapatra",      dept: "O&G",                     time: null },
-  { name: "Dr. Anamika Mishra",           dept: "O&G",                     time: null },
-  { name: "Dr. Priyasa Nanda",            dept: "O&G",                     time: null },
-  { name: "Dr. Swarnima Das",             dept: "O&G",                     time: null },
-  { name: "Dr. Prakash Chandra Mishra",   dept: "O&G",                     time: null },
-  { name: "Dr. Basudev Mahapatra",        dept: "O&G",                     time: null },
-  { name: "Dr. Monalisha Rajguru",        dept: "O&G",                     time: null },
-  { name: "Dr. Adyasha Mohapatra",        dept: "O&G",                     time: null },
-  { name: "Dr. Monalisha Naik",           dept: "O&G",                     time: null },
-  { name: "Dr. Mrinal Kanta Dash",        dept: "O&G",                     time: null },
-  { name: "Dr. Monalisha Behera",         dept: "O&G",                     time: null },
-  { name: "Dr. Rabi Ranjan Mishra",       dept: "O&G",                     time: null },
-  { name: "Dr. Namita Jena",              dept: "O&G",                     time: null },
-  { name: "Dr. Rasmi Kanta Patra",        dept: "O&G",                     time: null },
-  { name: "Dr. Sasmita Behuria",          dept: "O&G",                     time: null },
-  { name: "Dr. Kumkum Saini",             dept: "O&G",                     time: null },
-  { name: "Dr. Sanghmitra Das",           dept: "O&G",                     time: null },
-  { name: "Dr. Nihar Ranjan Bhoi",        dept: "O&G",                     time: null },
-  { name: "Dr. Nisha Kaushik",            dept: "O&G",                     time: null },
-  { name: "Dr. Laxmi Narayan Sahoo",      dept: "O&G",                     time: null },
-  { name: "Dr. Kabita Chhaina",           dept: "O&G",                     time: null },
-  { name: "Dr. Nihar Ranjan Mishra",      dept: "O&G",                     time: null },
-  { name: "Dr. Bandita Priyadarshini",    dept: "O&G",                     time: null },
-  { name: "Dr. Dibyajyoti Nayak",         dept: "O&G",                     time: null },
-  { name: "Dr. Anadi Charan Mishra",      dept: "O&G",                     time: null },
-  { name: "Dr. Sibani Devi",              dept: "O&G",                     time: null },
-  { name: "Dr. Anubhuti Patel",           dept: "O&G",                     time: null },
-  { name: "Dr. Snigdhamayee Panda",       dept: "O&G",                     time: null },
-  { name: "Dr. Bhagyashree Jena",         dept: "O&G",                     time: null },
-  { name: "Dr. Jayashree Rout",           dept: "O&G",                     time: null },
-  // Paediatric
-  { name: "Dr. Dillip Kumar Dash",        dept: "Paediatric",              time: "Everyday 7:30–8:30 AM & 4:00–5:00 PM" },
-  { name: "Dr. Jitendra Panda",           dept: "Paediatric",              time: "Daily 9–10 AM & 5–7 PM (Sun eve closed)" },
-  { name: "Dr. Bichitra Nanda Rout",      dept: "Paediatric",              time: null },
-  { name: "Dr. Chita Ranjan Kar",         dept: "Paediatric",              time: null },
-  { name: "Dr. Desis Kumar Panda",        dept: "Paediatric",              time: null },
-  { name: "Dr. Gayatri Ray",              dept: "Paediatric",              time: null },
-  { name: "Dr. Priyabarta Panda",         dept: "Paediatric",              time: null },
-  { name: "Dr. Asis Dixit",               dept: "Paediatric",              time: null },
-  // Orthopaedic
-  { name: "Dr. Paresh Kumar Pattnaik",    dept: "Orthopaedic",             time: null },
-  { name: "Dr. Baban Kumar Ojha",         dept: "Orthopaedic",             time: null },
-  { name: "Dr. G. Krishna Prasad",        dept: "Orthopaedic",             time: null },
-  { name: "Dr. Budheswar Majhi",          dept: "Orthopaedic",             time: null },
-  { name: "Dr. Biswakesh Panigrahi",      dept: "Orthopaedic",             time: null },
-  // Surgery
-  { name: "Dr. Dharni Dhar Pandav",       dept: "Surgery",                 time: "Everyday 09:00 AM–01:00 PM & 07:00–09:00 PM" },
-  { name: "Dr. Jitendra Narayan Senapati",dept: "Surgery",                 time: null },
-  { name: "Dr. Sumit Subhadarshi Mohanty",dept: "Surgery",                 time: null },
-  { name: "Dr. Kasturi Bharadwaj",        dept: "Surgery",                 time: null },
-  { name: "Dr. Alok Mohanty",             dept: "Surgery",                 time: null },
-  { name: "Dr. Narayan Rout",             dept: "Surgery",                 time: null },
-  { name: "Dr. Pramod Samantray",         dept: "Surgery",                 time: null },
-  { name: "Dr. Bijaya Kumar Sahoo",       dept: "Surgery",                 time: null },
-  { name: "Dr. Saroj Kant Sahoo",         dept: "Surgery",                 time: null },
-  { name: "Dr. Sunil Kumar Swain",        dept: "Surgery",                 time: null },
-  { name: "Dr. Ramapada Mohapatra",       dept: "Surgery",                 time: null },
-  { name: "Dr. Narahari Moharana",        dept: "Surgery",                 time: null },
-  { name: "Dr. Sobhan Mishra",            dept: "Dental Surgery",          time: null },
-  // Paediatric Surgery
-  { name: "Dr. Antaryami Pradhan",        dept: "Paediatric Surgery",      time: null },
-  { name: "Dr. Anil Kumar Panda",         dept: "Paediatric Surgery",      time: null },
-  // Urology
-  { name: "Dr. Debabrata Sabat",          dept: "Urology",                 time: null },
-  { name: "Dr. Pratyush Ranjan Samantaray",dept: "Urology",                time: null },
-  { name: "Dr. Pratik Sahoo",             dept: "Urology",                 time: null },
-  { name: "Dr. Debashis Routray",         dept: "Urology",                 time: null },
-  // ENT
-  { name: "Dr. Kaushik Sadangi",          dept: "ENT",                     time: null },
-  { name: "Dr. Debashees Nanda",          dept: "ENT",                     time: null },
-  // Medicine / Cardiology
-  { name: "Dr. Purna Chandra Bahinipati", dept: "Medicine & Cardiology",   time: "Everyday 10:30 AM – 11:30 AM" },
-  { name: "Dr. Manoj Kishore Chhotray",   dept: "Medicine & Cardiology",   time: null },
-  { name: "Dr. Mahesh Rath",              dept: "Medicine & Cardiology",   time: null },
-  // Dermatology
-  { name: "Sova Das",                     dept: "Dermatology",             time: null },
-  // Neurology
-  { name: "Dr. Om Mishra",                dept: "Neurology",               time: null },
-];
+// ============================================================
+// Supabase configuration — REPLACE these with your project values
+// Find them in Supabase Dashboard → Project Settings → API
+// ============================================================
+
+const SUPABASE_URL="https://cmijbmdbizcejhydyupz.supabase.co"
+const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNtaWpibWRiaXpjZWpoeWR5dXB6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2MTM5ODYsImV4cCI6MjEwMDE4OTk4Nn0.7iJ4neLefulX4IB84X2dxxAqRgxO48EeYbmPLr-nikM"
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Doctors data — populated dynamically from Supabase
+let DOCTORS = [];
 
 // Department display labels
 const DEPT_MAP = {
@@ -297,19 +215,54 @@ function getInitials(name) {
   return name.replace(/^Dr\.\s*/i, '').split(' ').slice(0,2).map(w => w[0]).join('').toUpperCase();
 }
 
+// ------------------------------------------------------------
+// Fetch doctors from Supabase
+// Expects a "doctors" table with columns: name, dept, time, sort_order
+// ------------------------------------------------------------
+async function fetchDoctors() {
+  const grid = document.getElementById('doctorsGrid');
+  grid.innerHTML = `<div class="empty-state">
+    <p>Loading specialists…</p>
+  </div>`;
+
+  try {
+    const { data, error } = await supabaseClient
+      .from('doctors')
+      .select('name, department')
+      .order('id', { ascending: true });
+
+    if (error) throw error;
+
+    DOCTORS = data || [];
+
+    document.getElementById('allCount').textContent = DOCTORS.length;
+    document.getElementById('totalCount').textContent = DOCTORS.length;
+
+    renderTabs();
+    renderCards();
+  } catch (err) {
+    console.error('Supabase fetch error:', err);
+    grid.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <h3>Unable to load specialists</h3>
+      <p>Please refresh the page or try again shortly.</p>
+    </div>`;
+  }
+}
+
 function renderTabs() {
   const tabs = document.getElementById('deptTabs');
   const depts = ["All", ...Object.keys(DEPT_MAP).filter(d => d !== "All")];
   tabs.innerHTML = '';
-  depts.forEach(dept => {
-    const count = dept === "All" ? DOCTORS.length : DOCTORS.filter(d => d.dept === dept).length;
+  depts.forEach(department => {
+    const count = department === "All" ? DOCTORS.length : DOCTORS.filter(d => d.department === department).length;
     if (count === 0) return;
     const btn = document.createElement('button');
-    btn.className = 'dept-tab' + (dept === currentDept ? ' active' : '');
-    btn.dataset.dept = dept;
-    const shortLabel = dept === "O&G" ? "Obstetrics & Gynae" : dept === "Medicine & Cardiology" ? "Medicine" : dept;
+    btn.className = 'dept-tab' + (department === currentDept ? ' active' : '');
+    btn.dataset.dept = department;
+    const shortLabel = department === "O&G" ? "Obstetrics & Gynae" : department === "Medicine & Cardiology" ? "Medicine" : department;
     btn.innerHTML = `${shortLabel} <span class="count">${count}</span>`;
-    btn.onclick = () => { currentDept = dept; renderTabs(); renderCards(); };
+    btn.onclick = () => { currentDept = department; renderTabs(); renderCards(); };
     tabs.appendChild(btn);
   });
 }
@@ -318,8 +271,8 @@ function renderCards() {
   const grid = document.getElementById('doctorsGrid');
   const search = currentSearch.toLowerCase();
   const filtered = DOCTORS.filter(d => {
-    const deptMatch = currentDept === "All" || d.dept === currentDept;
-    const searchMatch = !search || d.name.toLowerCase().includes(search) || d.dept.toLowerCase().includes(search);
+    const deptMatch = currentDept === "All" || d.department === currentDept;
+    const searchMatch = !search || d.name.toLowerCase().includes(search) || d.department.toLowerCase().includes(search);
     return deptMatch && searchMatch;
   });
 
@@ -342,7 +295,7 @@ function renderCards() {
   grid.innerHTML = filtered.map((doc, i) => {
     const initials = getInitials(doc.name);
     const isOnCall = !doc.time;
-    const deptFull = DEPT_MAP[doc.dept] || doc.dept;
+    const deptFull = DEPT_MAP[doc.department] || doc.department;
     const statusBadge = isOnCall
       ? `<span class="oncall-badge">On Call</span>`
       : `<span class="timed-badge">Scheduled</span>`;
@@ -359,8 +312,6 @@ function renderCards() {
     return `<div class="doctor-card" style="animation-delay:${i * 0.03}s">
       <div class="card-avatar">
         <div class="avatar-initials">${initials}</div>
-        <span class="dept-badge">${doc.dept}</span>
-        ${statusBadge}
       </div>
       <div class="card-body">
         <div class="card-name">${doc.name}</div>
@@ -387,11 +338,10 @@ document.getElementById('searchInput').addEventListener('input', e => {
   renderCards();
 });
 
-document.getElementById('allCount').textContent = DOCTORS.length;
-document.getElementById('totalCount').textContent = DOCTORS.length;
-
-renderTabs();
-renderCards();
+// ------------------------------------------------------------
+// Init
+// ------------------------------------------------------------
+fetchDoctors();
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
